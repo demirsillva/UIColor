@@ -31,8 +31,8 @@ export default function App() {
             Color Generator
             <br />
           </h1>
-          <p className="mt-4 font-base text-lg max-sm:text-2xl text-gray-500 dark:text-zinc-200">
-            Press <span className="max-lg:hidden">spacebar</span><span className="md:hidden">random</span>, enter a hexcode or change the<br/>
+          <p className="mt-4 font-base text-lg max-sm:text-xl text-gray-500 dark:text-zinc-200">
+            Press <span className="max-lg:hidden">spacebar</span><span className="lg:hidden">random</span>, enter a hexcode or change the <br className="max-sm:hidden"/>
             HSL values to create a custom color scale.
           </p>
         </div>

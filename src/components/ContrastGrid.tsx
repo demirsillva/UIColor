@@ -60,7 +60,7 @@ function generateContrastGrid(baseColor: string, steps: number) {
   }
 
   return (
-      <div className="grid lg:grid-cols-11 md:grid-cols-4 sm:grid-cols-2 gap-4 h-24 mt-4">
+      <div className="grid lg:grid-cols-11 md:grid-cols-4 sm:grid-cols-2 gap-4 h-24 mt-5">
         {Object.entries(contrastGrid).map(([color, contrast], index) => (
           <div
             key={index}
