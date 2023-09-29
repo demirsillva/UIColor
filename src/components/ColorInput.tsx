@@ -64,6 +64,7 @@ function ColorInput({ onColorGenerated }: ColorInputProps) {
           // pattern="[A-Fa-f]{3}"
           className="px-6 pl-16 w-full font-medium h-full rounded-full bg-transparent text-zinc-600 dark:text-zinc-200"
         />
+
         <div className="absolute inline-block w-9 h-9 ml-3">
           <input
             type="color"
@@ -76,11 +77,12 @@ function ColorInput({ onColorGenerated }: ColorInputProps) {
             style={{ backgroundColor: hexCode }}
           ></div>
         </div>
-        <div className="absolute">
+        
+        <div className="lg:hidden">
           <button
             type="button"
             onClick={handleButtonClick}
-            className="relative left-[16rem] border border-gray-300 px-4 py-1 rounded-full text-zinc-700 dark:text-zinc-50 dark:bg-indigo-950"
+            className="mr-3 border border-gray-300 px-4 py-1 rounded-full text-zinc-700 dark:text-zinc-50 dark:bg-indigo-950"
           >
             Random
           </button>
