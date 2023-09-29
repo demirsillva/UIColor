@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 interface ContrastGridProps{
     baseColor: string;
@@ -29,7 +29,7 @@ function ContrastGrid({ baseColor, steps }: ContrastGridProps) {
 }
 
 useEffect(() => {
-    if(baseColor && typeof baseColor === 'string'){
+    if(baseColor && typeof baseColor === "string"){
         generateContrastGrid(baseColor, steps);
     }
 },[baseColor, steps]);
@@ -48,9 +48,9 @@ function generateContrastGrid(baseColor: string, steps: number) {
       const newG = Math.min(255, Math.max(0, g + Math.round(luminanceDiff * 255)));
       const newB = Math.min(255, Math.max(0, b + Math.round(luminanceDiff * 255)));
 
-      const newColor = `#${newR.toString(16).padStart(2, '0')}${newG
+      const newColor = `#${newR.toString(16).padStart(2, "0")}${newG
         .toString(16)
-        .padStart(2, '0')}${newB.toString(16).padStart(2, '0')}`;
+        .padStart(2, "0")}${newB.toString(16).padStart(2, "0")}`;
       const contrast = calculateContrast(baseColor, newColor);
 
       newContrastGrid[newColor] = contrast;
@@ -60,16 +60,15 @@ function generateContrastGrid(baseColor: string, steps: number) {
   }
 
   return (
-    <div>
-      <div className="grid grid-cols-11 gap-4">
+      <div className="grid lg:grid-cols-11 md:grid-cols-4 sm:grid-cols-2 gap-4 h-24 mt-4">
         {Object.entries(contrastGrid).map(([color, contrast], index) => (
           <div
             key={index}
             style={{
               backgroundColor: color,
-              color: contrast < 4.5 ? 'white' : 'black',
+              color: contrast < 3.3 ? "black" : "white",
             }}
-            className="p-2 text-center"
+            className="flex content-end rounded-md"
           >
             {color}
             <br />
@@ -77,7 +76,6 @@ function generateContrastGrid(baseColor: string, steps: number) {
           </div>
         ))}
       </div>
-    </div>
   );
 }
 
