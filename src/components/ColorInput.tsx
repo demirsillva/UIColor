@@ -78,11 +78,11 @@ function ColorInput({ onColorGenerated }: ColorInputProps) {
           ></div>
         </div>
         
-        <div className="lg:hidden">
+        <div className="relative top-[16.5px] lg:hidden">
           <button
             type="button"
             onClick={handleButtonClick}
-            className="mr-3 border border-gray-300 px-4 py-1 rounded-full text-zinc-700 dark:text-zinc-50 dark:bg-indigo-950"
+            className="absolute right-[.75rem] bottom-0 border border-gray-300 px-4 py-1 rounded-full text-zinc-700 dark:text-zinc-50 dark:bg-indigo-950"
           >
             Random
           </button>
