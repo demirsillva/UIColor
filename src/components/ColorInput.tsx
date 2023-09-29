@@ -17,7 +17,7 @@ function ColorInput({ onColorGenerated }: ColorInputProps) {
   }
 
   const [hexCode, setHexCode] = useState(generateRandomHexCode());
-
+  
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newHexCode = event.target.value;
     setHexCode(newHexCode);

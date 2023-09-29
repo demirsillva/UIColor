@@ -11,6 +11,8 @@ interface ContrastGridState {
 
 function ContrastGrid({ baseColor, steps }: ContrastGridProps) {
   const [contrastGrid, setContrastGrid] = useState<ContrastGridState>({});
+  const [copiedColor, setCopiedColor] = useState<string | null>(null);
+
 
   function calculateLuminance(r: number, g: number, b: number) {
     return 0.2126 * r + 0.7152 * g + 0.0722 * b;
@@ -59,6 +61,15 @@ function generateContrastGrid(baseColor: string, steps: number) {
     setContrastGrid(newContrastGrid);
   }
 
+  function copyToClipboard(color: string) {
+    navigator.clipboard.writeText(color);
+    setCopiedColor(color);
+
+    setTimeout(() => {
+      setCopiedColor(null);
+    }, 6000);
+  }
+
   return (
       <div className="grid lg:grid-cols-11 md:grid-cols-4 sm:grid-cols-2 gap-4 h-24 mt-5">
         {Object.entries(contrastGrid).map(([color, contrast], index) => (
@@ -68,13 +79,19 @@ function generateContrastGrid(baseColor: string, steps: number) {
               backgroundColor: color,
               color: contrast < 3.3 ? "black" : "white",
             }}
-            className="flex content-end rounded-md"
+            className="flex content-end rounded-md cursor-pointer"
+            onClick={() => copyToClipboard(color)}
           >
             {color}
             <br />
             {contrast.toFixed(2)}
           </div>
         ))}
+        {copiedColor && (
+          <div className="absolute bottom-10 bg-green-500 text-green-50 w-80 h-16 flex justify-center items-center rounded-md">
+            Copied: {copiedColor}
+          </div>
+      )}
       </div>
   );
 }
