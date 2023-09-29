@@ -68,9 +68,8 @@ function generateContrastGrid(baseColor: string, steps: number) {
             style={{
               backgroundColor: color,
               color: contrast < 4.5 ? 'white' : 'black',
-              padding: '1rem',
-              textAlign: 'center',
             }}
+            className="p-2 text-center"
           >
             {color}
             <br />

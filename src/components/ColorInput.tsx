@@ -45,14 +45,15 @@ function ColorInput({ onColorGenerated }: ColorInputProps){
 
     return (
         <div className="mt-10 max-w-md mx-auto">
-            <div className="flex items-center h-12 border border-gray-300 rounded-full">           
+            <div className="flex items-center h-14 border border-gray-300 rounded-full">           
                 <input
                     type="text" 
                     value={hexCode}
                     onChange={handleInputChange}
+                    // pattern="[A-Fa-f]{3}"
                     className="px-6 pl-16 w-full font-medium h-full rounded-full bg-transparent"
                 /> 
-                <div className="absolute inline-block w-8 h-8 ml-3">
+                <div className="absolute inline-block w-9 h-9 ml-3">
                     <input 
                         type="color" 
                         value={hexCode} 
@@ -61,7 +62,9 @@ function ColorInput({ onColorGenerated }: ColorInputProps){
                         />      
                     <div className="w-full h-full rounded-full" style={{ backgroundColor: hexCode }}></div>
                 </div>
-                
+                <div className="absolute">
+                  <button className="relative left-[16rem] border border-gray-400 px-4 py-1 rounded-full" type="button">Random</button>            
+                </div>
             </div>
         </div>
     )
