@@ -31,7 +31,7 @@ export default function App() {
             Color Generator
             <br />
           </h1>
-          <p className="mt-4 font-base text-lg text-gray-500 dark:text-zinc-200">
+          <p className="mt-4 font-base text-lg sm:text-xl text-gray-500 dark:text-zinc-200">
             Press spacebar, enter a hexcode or change the
             <br />
             HSL values to create a custom color scale.
