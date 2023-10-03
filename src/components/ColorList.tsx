@@ -1,7 +1,7 @@
 // import React from 'react';
 
 interface ColorListProps {
-  colors: string[]; // Array de códigos HEX de cores
+  colors: string[];
 }
 
 function ColorList({ colors }: ColorListProps) {

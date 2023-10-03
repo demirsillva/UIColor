@@ -2,9 +2,8 @@ import { useState } from "react";
 
 import Navbar from "./components/Navbar";
 import ColorInput from "./components/ColorInput";
-import ContrastGrid from "./components/ContrastGrid";
+import ContrastGrid from "./components/GenerateContrastGrid";
 // import ColorList from "./components/ColorList"
-// import ColorPicker from "./components/ColorPicker"
 
 import "./App.css";
 
@@ -21,13 +20,13 @@ export default function App() {
         <Navbar />
       </div>
 
-      <div className="px-6 mx-auto mt-1 md:mb-2">
+      <div className="px-6 mx-auto md:mb-2">
         <div className="rounded-full mt-8 h-10 bg-yellow-300 text-yellow-700 flex md:flex justify-center cursor-pointer">
           <span className="m-auto">Under development!</span>
         </div>
 
         <div className="text-center">
-          <h1 className="mt-8 text-5xl max-sm:text-6xl font-bold text-blue-950 dark:text-slate-50">
+          <h1 className="mt-8 text-5xl max-sm:text-6xl font-extrabold text-blue-950 dark:text-slate-50">
             Color Generator
             <br />
           </h1>
@@ -36,11 +35,13 @@ export default function App() {
             HSL values to create a custom color scale.
           </p>
         </div>
-
-        <ColorInput onColorGenerated={addColorToList} />
+        
+        <div className="md:mt-6 max-sm:fixed max-sm:w-[88%] max-sm:bottom-10">
+          <ColorInput onColorGenerated={addColorToList}  />
+        </div>
       </div>
 
-      <div className="w-[92%] px-6 mx-auto mt-1 md:mt-2 md:mb-2 mb-2">
+      <div className="w-[92%] px-6 mx-auto mt-1 md:mt-2 md:mb-2 mb-4">
         {/* <ColorList colors={colors} /> */}
         <ContrastGrid baseColor={colors[colors.length - 1]} steps={11} />
       </div>

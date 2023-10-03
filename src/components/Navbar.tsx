@@ -1,5 +1,5 @@
 import Theme from "../theme/Theme"
-import { BiUser } from "react-icons/bi"
+// import { BiUser } from "react-icons/bi"
 
 export default function Navbar() {
     return (
@@ -11,12 +11,12 @@ export default function Navbar() {
 
             <div className="">
                 <ul className="flex flex-row items-center gap-3">
-                    <li><a href="#" rel="noopener noreferrer">Save</a></li>
+                    {/* <li><a href="#" rel="noopener noreferrer">Save</a></li>
                     <li>
                         <a href="#" rel="noopener noreferrer">
                             <BiUser className="w-6 h-6" />
                         </a>
-                    </li>
+                    </li> */}
                     <li>
                         <Theme />
                     </li>
