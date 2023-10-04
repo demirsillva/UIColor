@@ -74,7 +74,7 @@ function ContrastGrid({ baseColor, steps }: ContrastGridProps) {
 
   return (
     <>
-      <div className="grid lg:grid-cols-11 md:grid-cols-4 sm:grid-cols-2 gap-4 h-24 mt-5">
+      <div className="w-full grid lg:grid-cols-11 md:grid-cols-4 sm:grid-cols-2 gap-4 mt-5">
         {Object.entries(contrastGrid).map(([color, contrast], index) => (
           <div
             key={index}
@@ -82,12 +82,15 @@ function ContrastGrid({ baseColor, steps }: ContrastGridProps) {
               backgroundColor: color,
               color: contrast < 1.0 ? "black" : "white",
             }}
-            className="flex content-end rounded-md cursor-pointer justify-center items-center"
+            className="flex items-center max-md:justify-between h-28 max-md:h-20 max-md:px-6 md:flex-col-reverse rounded-md cursor-pointer"
             onClick={() => handleCopyClick(color)}
           >
-            {color}
-            <br />
-            {contrast.toFixed(2)}
+            <div>
+              {color}
+            </div>
+            <div>
+              {contrast.toFixed(2)}
+            </div>
           </div>
         ))}
       </div>

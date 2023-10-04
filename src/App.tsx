@@ -15,7 +15,7 @@ export default function App() {
   };
 
   return (
-    <div className="flex flex-col h-screen w-full">
+    <div className="flex flex-col">
       <div className="mb-14">
         <Navbar />
       </div>
@@ -36,15 +36,16 @@ export default function App() {
           </p>
         </div>
         
-        <div className="md:mt-6 max-sm:fixed max-sm:w-[88%] max-sm:bottom-10">
+        <div className="md:mt-6 max-sm:fixed max-sm:w-[88%] max-sm:bottom-8">
           <ColorInput onColorGenerated={addColorToList}  />
         </div>
       </div>
 
-      <div className="w-[92%] px-6 mx-auto mt-1 md:mt-2 md:mb-2 mb-4">
+      <div className="w-full px-6 mx-auto mt-1 md:mt-2 mb-32">
         {/* <ColorList colors={colors} /> */}
         <ContrastGrid baseColor={colors[colors.length - 1]} steps={11} />
       </div>
+
     </div>
   );
 }
