@@ -29,7 +29,7 @@ function generateContrastGrid(baseColor: string, steps: number): ContrastGridSta
   const newContrastGrid: ContrastGridState = {};
 
   for (let i = 0; i < steps; i++) {
-    const luminanceDiff = (i - steps / 2) * 0.05;
+    const luminanceDiff = ( steps / 2 - i) * 0.05;
     const r = parseInt(baseColor.slice(1, 3), 16);
     const g = parseInt(baseColor.slice(3, 5), 16);
     const b = parseInt(baseColor.slice(5, 7), 16);
@@ -62,7 +62,6 @@ function ContrastGrid({ baseColor, steps }: ContrastGridProps) {
     }
   }, [baseColor, steps]);
 
-
   const handleCopyClick = (color: string) => {
     copyToClipboard(color);
     setCopiedColor(color);
@@ -74,7 +73,7 @@ function ContrastGrid({ baseColor, steps }: ContrastGridProps) {
 
   return (
     <>
-      <div className="w-full grid lg:grid-cols-11 md:grid-cols-4 sm:grid-cols-2 gap-4 mt-5">
+      <div className=" grid lg:grid-cols-11 md:grid-cols-4 sm:grid-cols-2 gap-2 mt-5">
         {Object.entries(contrastGrid).map(([color, contrast], index) => (
           <div
             key={index}
