@@ -36,7 +36,7 @@ export default function App() {
           </p>
         </div>
         
-        <div className="md:mt-6 max-sm:fixed max-sm:w-[88%] max-sm:bottom-8">
+        <div className="md:mt-6 max-sm:fixed max-sm:left-0 max-sm:right-0 max-sm:w-full max-w-screen-xl mx-auto max-sm:px-6 max-sm:bottom-8">
           <ColorInput onColorGenerated={addColorToList}  />
         </div>
       </div>
