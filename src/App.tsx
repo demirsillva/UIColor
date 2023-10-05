@@ -12,6 +12,7 @@ export default function App() {
   const addColorToList = (color: string) => {
     setColors([...colors, color]);
   };
+ 
 
   return (
     <div className="flex flex-col">
@@ -36,13 +37,13 @@ export default function App() {
         </div>
         
         <div className="md:mt-6 max-sm:fixed max-sm:left-0 max-sm:right-0 max-sm:w-full max-w-screen-xl mx-auto max-sm:px-6 max-sm:bottom-8">
-          <ColorInput onColorGenerated={addColorToList}  />
+          <ColorInput onColorGenerated={addColorToList} />
         </div>
       </div>
 
       <div className="w-full px-6 mx-auto mt-1 md:mt-2 mb-32">
         <ContrastGrid baseColor={colors[colors.length - 1]} steps={11} />
-      </div>
+      </div>  
 
     </div>
   );
