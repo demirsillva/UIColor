@@ -60,7 +60,7 @@ function ColorInput({ onColorGenerated }: ColorInputProps) {
   }, [onColorGenerated, colorsGenerated]);
 
   return (
-      <div className="flex items-center h-14 border border-gray-400 rounded-full">
+      <div className="flex items-center h-14 max-sm:h-[63px] border border-gray-400 rounded-full">
         <input
           type="text"
           value={hexCode}
