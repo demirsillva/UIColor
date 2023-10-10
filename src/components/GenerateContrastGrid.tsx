@@ -94,12 +94,14 @@ function ContrastGrid({ baseColor, steps }: ContrastGridProps) {
         ))}
       </div>
 
-      <div className="mt-5 animate-bounce fixed top-14 mx-auto">
-        {copiedColor && (
-          <div className="bg-zinc-50 text-green-600 text-md w-72 h-14 flex justify-center items-center rounded-md">
-            Copied: {copiedColor}
-          </div>
-        )}
+      <div className="flex justify-center mt-5 transition ease-in-out delay-150">
+        <div className="fixed z-50 bottom-10 max-sm:bottom-28">
+          {copiedColor && (
+            <div className="dark:bg-zinc-50 dark:text-green-600 bg-green-600 text-zinc-50 text-md w-72 h-14 flex justify-center items-center rounded-md">
+              Copied: {copiedColor}
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

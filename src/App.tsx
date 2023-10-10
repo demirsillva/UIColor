@@ -12,7 +12,6 @@ export default function App() {
   const addColorToList = (color: string) => {
     setColors([...colors, color]);
   };
- 
 
   return (
     <div className="flex flex-col">
