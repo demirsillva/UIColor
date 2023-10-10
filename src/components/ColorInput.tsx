@@ -82,7 +82,7 @@ function ColorInput({ onColorGenerated }: ColorInputProps) {
           ></div>
         </div>
 
-        <div className="relative top-[16.5px] lg:hidden">
+        <div className="relative top-[16.5px] xl:hidden">
           <button
             type="button"
             onClick={handleRandomColorGeneration}
